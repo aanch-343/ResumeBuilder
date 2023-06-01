@@ -5,31 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#99DAD4"
-    tools:context=".MainActivity">
+    tools:context=".Objective">
+
+    <TextView
+        android:id="@+id/objective"
+        android:layout_width="247dp"
+        android:layout_height="103dp"
+        android:background="#C1DCD9"
+        android:hint="Your Objective"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.424"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
 
     <Button
-        android:id="@+id/create"
-        android:layout_width="186dp"
-        android:layout_height="71dp"
-        android:backgroundTint="#AC3131"
-        android:text="Create Resume"
-        app:cornerRadius="4mm"
+        android:id="@+id/Done"
+        android:layout_width="124dp"
+        android:layout_height="53dp"
+        android:backgroundTint="#9C3535"
+        android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.65" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282"
-        app:srcCompat="@drawable/office" />
+        app:layout_constraintVertical_bias="0.349" />
 </androidx.constraintlayout.widget.ConstraintLayout>
