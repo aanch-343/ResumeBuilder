@@ -18,7 +18,7 @@
             android:name=".Template3"
             android:exported="false" />
         <activity
-            android:name=".Menu"
+            android:name=".Templates"
             android:exported="false" />
         <activity
             android:name=".reference"
@@ -45,8 +45,9 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".Templates"
-            android:exported="true">
+            android:name=".Menu"
+            android:exported="true" android:parentActivityName=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
