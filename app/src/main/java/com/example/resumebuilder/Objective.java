@@ -10,5 +10,7 @@ public class Objective extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objective);
+        getSupportActionBar().setTitle("Objectives");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
