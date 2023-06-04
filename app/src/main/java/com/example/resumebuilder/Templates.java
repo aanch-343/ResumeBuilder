@@ -11,5 +11,7 @@ ImageButton profile;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_templates);
+        getSupportActionBar().setTitle("Templates");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
