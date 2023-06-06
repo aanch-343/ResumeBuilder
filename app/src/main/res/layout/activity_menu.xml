@@ -190,7 +190,7 @@
             android:layout_gravity="bottom"
             android:background="#17B3C6"
             android:fontFamily="sans-serif-medium"
-            android:text="     Referrence"
+            android:text="     Reference"
             android:textColor="#C21010"
             android:textSize="15dp" />
 

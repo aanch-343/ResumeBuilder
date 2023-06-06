@@ -7,12 +7,13 @@
     android:background="#99DAD4"
     tools:context=".PersonalDetails">
 
-    <TextView
-        android:id="@+id/textView7"
+    <EditText
+        android:id="@+id/linkedIn"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="         LinkdIn"
+        android:hint="  LinkedIn"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -20,12 +21,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.807" />
 
-    <TextView
-        android:id="@+id/textView6"
+    <EditText
+        android:id="@+id/dob"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="     DateofBirth"
+        android:hint="  Date of Birth"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -33,24 +35,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.643" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView5"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="      Phone"
+        android:hint="  Phone"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <EditText
         android:id="@+id/textView4"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="      Email"
+        android:hint="  Email"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -58,12 +62,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.347" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <EditText
+        android:id="@+id/address"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="      Address(optional)"
+        android:hint="  Address(optional)"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
@@ -71,12 +76,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.201" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <EditText
+        android:id="@+id/name"
         android:layout_width="346dp"
         android:layout_height="77dp"
         android:background="#C1DCD9"
-        android:hint="      Name"
+        android:hint="  Name"
+        android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"

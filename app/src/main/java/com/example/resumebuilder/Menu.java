@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import java.lang.ref.Reference;
 
 public class Menu extends AppCompatActivity {
-FrameLayout profile,education,skills,objective,expereince,reference;
+FrameLayout profile,education,skills,objective,experience,reference;
 Button choose_template;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ Button choose_template;
         education=(FrameLayout)findViewById(R.id.frame2);
        skills=(FrameLayout)findViewById(R.id.frame3) ;
         objective=(FrameLayout)findViewById(R.id.frame4) ;
-        expereince=(FrameLayout)findViewById(R.id.frame5) ;
+        experience=(FrameLayout)findViewById(R.id.frame5) ;
         reference=(FrameLayout)findViewById(R.id.frame6) ;
         choose_template=(Button)findViewById(R.id.button) ;
         profile.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +55,7 @@ Button choose_template;
                 startActivity(i4);
             }
         });
-        expereince.setOnClickListener(new View.OnClickListener() {
+        experience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i5=new Intent(Menu.this,Experience.class);
