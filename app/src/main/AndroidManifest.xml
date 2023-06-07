@@ -17,7 +17,8 @@
             android:parentActivityName=".Menu"/>
         <activity
             android:name=".Template1"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Templates"/>
         <activity
             android:name=".Templates"
             android:exported="false"
