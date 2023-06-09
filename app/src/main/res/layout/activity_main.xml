@@ -4,21 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#E2EAD9"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/view"
         android:layout_width="186dp"
         android:layout_height="71dp"
-        android:backgroundTint="#BFCCB5"
+        android:backgroundTint="#7B9A63"
         android:text="View Resume"
-        android:textColor="#3E4C42"
-        android:textSize="15sp"
         app:cornerRadius="4mm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778" />
@@ -27,27 +25,26 @@
         android:id="@+id/create"
         android:layout_width="186dp"
         android:layout_height="71dp"
-        android:backgroundTint="#BFCCB5"
+        android:backgroundTint="#7B9A63"
         android:text="Create Resume"
-        android:textColor="#3E4C42"
-        android:textSize="15sp"
         app:cornerRadius="4mm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.537"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.65" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="267dp"
-        android:layout_height="278dp"
+        android:id="@+id/imageView6"
+        android:layout_width="372dp"
+        android:layout_height="359dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.192"
-        app:srcCompat="@drawable/office" />
+        app:layout_constraintVertical_bias="0.158"
+        app:srcCompat="@drawable/employee1" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

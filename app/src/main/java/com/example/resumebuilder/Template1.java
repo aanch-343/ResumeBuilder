@@ -10,7 +10,8 @@ public class Template1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_template1);
-        getSupportActionBar().setTitle("Template 1");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
     }
 }

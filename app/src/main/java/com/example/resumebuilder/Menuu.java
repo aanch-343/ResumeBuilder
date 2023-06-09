@@ -1,8 +1,11 @@
 package com.example.resumebuilder;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,10 +14,14 @@ import android.widget.ImageButton;
 public class Menuu extends AppCompatActivity {
     ImageButton profile,education,skills,objective,experience,reference;
     Button choose_template;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menuu);
+        getSupportActionBar().setTitle("Profile");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         profile=(ImageButton)findViewById(R.id.pd);
         education=(ImageButton)findViewById(R.id.edu);
         skills=(ImageButton)findViewById(R.id.skill) ;
@@ -22,7 +29,10 @@ public class Menuu extends AppCompatActivity {
         experience=(ImageButton)findViewById(R.id.exp) ;
         reference=(ImageButton)findViewById(R.id.ref) ;
         choose_template=(Button)findViewById(R.id.choose) ;
-        profile.setOnClickListener(new View.OnClickListener() {
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+            profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i1=new Intent(Menuu.this,PersonalDetails.class) ;

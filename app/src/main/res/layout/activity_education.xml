@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F3F4EF"
     tools:context=".Education">
 
     <EditText
@@ -11,8 +12,8 @@
         android:layout_width="311dp"
         android:layout_height="70dp"
         android:background="@drawable/rounded_edittext"
-        android:padding="15sp"
         android:hint="Year"
+        android:padding="15sp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,8 +27,8 @@
         android:layout_width="311dp"
         android:layout_height="70dp"
         android:background="@drawable/rounded_edittext"
-        android:padding="15sp"
         android:hint="Grade/Score"
+        android:padding="15sp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +42,8 @@
         android:layout_width="311dp"
         android:layout_height="70dp"
         android:background="@drawable/rounded_edittext"
-        android:padding="15sp"
         android:hint="School/University"
+        android:padding="15sp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,8 +57,8 @@
         android:layout_width="124dp"
         android:layout_height="53dp"
         android:backgroundTint="#aec6cf"
-        android:textColor="#000000"
         android:text="Done"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -70,8 +71,8 @@
         android:layout_width="311dp"
         android:layout_height="70dp"
         android:background="@drawable/rounded_edittext"
-        android:padding="15sp"
         android:hint="Course/Degree"
+        android:padding="15sp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -85,8 +86,8 @@
         android:layout_width="103dp"
         android:layout_height="54dp"
         android:backgroundTint="#aec6cf"
-        android:textColor="#000000"
         android:text="+ ADD"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,7 +95,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.676" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

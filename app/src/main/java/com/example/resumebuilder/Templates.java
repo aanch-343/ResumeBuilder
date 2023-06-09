@@ -15,8 +15,9 @@ ImageButton temp1,temp2,temp3,temp4,temp5,temp6;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_templates);
-        getSupportActionBar().setTitle("Templates");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
         temp1=(ImageButton)findViewById(R.id.Template1);
         temp1.setOnClickListener(new View.OnClickListener() {
             @Override
