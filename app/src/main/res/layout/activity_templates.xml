@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#AED3CF"
     tools:context=".Templates">
 
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="190dp"
         android:layout_height="225dp"
-        android:background="#AED3CF"
+        android:background="#E4E3E3"
         android:contentDescription="Template2"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,13 +19,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.011"
-        app:srcCompat="@drawable/template1" />
+        app:srcCompat="@drawable/template2" />
 
     <ImageButton
         android:id="@+id/Template1"
-        android:layout_width="193dp"
-        android:layout_height="227dp"
-        android:background="#AED3CF"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:background="#E4E3E3"
         android:contentDescription="Template1"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,13 +34,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.013"
-        app:srcCompat="@drawable/template2" />
+        app:srcCompat="@drawable/template1" />
 
     <ImageButton
         android:id="@+id/imageButton3"
-        android:layout_width="191dp"
-        android:layout_height="208dp"
-        android:background="#AED3CF"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:background="#E4E3E3"
         android:contentDescription="Template3"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,51 +48,51 @@
         app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.466"
+        app:layout_constraintVertical_bias="0.48"
         app:srcCompat="@drawable/template3" />
 
     <ImageButton
         android:id="@+id/imageButton4"
-        android:layout_width="173dp"
-        android:layout_height="227dp"
-        android:background="#AED3CF"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:background="#E4E3E3"
         android:contentDescription="Template6"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.865"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.932"
-        app:srcCompat="@drawable/template4" />
+        app:layout_constraintVertical_bias="0.944"
+        app:srcCompat="@drawable/template6" />
 
     <ImageButton
         android:id="@+id/imageButton5"
-        android:layout_width="185dp"
-        android:layout_height="234dp"
-        android:background="#AED3CF"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:background="#E4E3E3"
         android:contentDescription="Template5"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintHorizontal_bias="0.027"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.945"
+        app:layout_constraintVertical_bias="0.944"
         app:srcCompat="@drawable/template5" />
 
     <ImageButton
         android:id="@+id/imageButton6"
-        android:layout_width="201dp"
-        android:layout_height="207dp"
-        android:background="#AED3CF"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:background="#E4E3E3"
         android:contentDescription="Template4"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.927"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
-        app:srcCompat="@drawable/template6" />
+        app:layout_constraintVertical_bias="0.48"
+        app:srcCompat="@drawable/template4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9BDDD7"
     tools:context=".ViewResume">
 
     <TextView
@@ -25,8 +24,9 @@
         android:id="@+id/button3"
         android:layout_width="131dp"
         android:layout_height="57dp"
-        android:backgroundTint="#9E1E1E"
+        android:backgroundTint="#BFCCB5"
         android:text="Download"
+        android:textColor="#3E4C42"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
