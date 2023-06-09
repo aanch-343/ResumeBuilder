@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#99DAD4"
     tools:context=".Objective">
 
     <EditText
         android:id="@+id/objective"
         android:layout_width="247dp"
         android:layout_height="103dp"
-        android:background="#C1DCD9"
+        android:background="@drawable/rounded_edittext"
+        android:padding="15sp"
         android:hint="Your Objective"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
@@ -25,7 +25,8 @@
         android:id="@+id/Done"
         android:layout_width="124dp"
         android:layout_height="53dp"
-        android:backgroundTint="#9C3535"
+        android:backgroundTint="#aec6cf"
+        android:textColor="#000000"
         android:text="Done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

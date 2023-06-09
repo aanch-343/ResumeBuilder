@@ -4,4 +4,100 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menuu"/>
+    tools:context=".Menuu">
+
+    <ImageButton
+        android:id="@+id/obj"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="224dp"
+        android:background="@null"
+        android:contentDescription="objective"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/obj" />
+
+    <ImageButton
+        android:id="@+id/exp"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="224dp"
+        android:background="@null"
+        android:contentDescription="experience"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/exp" />
+
+    <ImageButton
+        android:id="@+id/ref"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="224dp"
+        android:background="@null"
+        android:contentDescription="reference"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ref" />
+
+    <ImageButton
+        android:id="@+id/skill"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:contentDescription="skills"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/skill" />
+
+    <ImageButton
+        android:id="@+id/pd"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:contentDescription="personaldetails"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/personaldetails" />
+
+    <ImageButton
+        android:id="@+id/edu"
+        android:layout_width="111dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="72dp"
+        android:background="@null"
+        android:contentDescription="edu"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/edu" />
+
+    <Button
+        android:id="@+id/choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="228dp"
+        android:backgroundTint="#9BBECC"
+        android:text="Choose Template"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
