@@ -38,7 +38,8 @@ public class PersonalDetails extends AppCompatActivity {
                 m.put("phone",phone.getText().toString());
                 m.put("dob",dob.getText().toString());
                 m.put("LinkedIn",linkedin.getText().toString());
-                FirebaseDatabase.getInstance().getReference()            }
+                FirebaseDatabase.getInstance().getReference().child("Personal Details").push().setValue(m);
+            }
 
         });
 
