@@ -8,7 +8,7 @@
     tools:context=".Skillls">
 
     <EditText
-        android:id="@+id/textView13"
+        android:id="@+id/skill"
         android:layout_width="262dp"
         android:layout_height="72dp"
         android:background="@drawable/rounded_edittext"
