@@ -24,8 +24,8 @@
 
     <Button
         android:id="@+id/add"
-        android:layout_width="79dp"
-        android:layout_height="58dp"
+        android:layout_width="103dp"
+        android:layout_height="54dp"
         android:backgroundTint="#aec6cf"
         android:textColor="#000000"
         android:text="+ADD"

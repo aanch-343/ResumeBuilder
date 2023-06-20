@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/ed"
-        android:layout_width="116dp"
+        android:layout_width="120dp"
         android:layout_height="61dp"
         android:background="@drawable/rounded_edittext"
         android:padding="15sp"
@@ -39,7 +39,7 @@
 
     <EditText
         android:id="@+id/sd"
-        android:layout_width="116dp"
+        android:layout_width="120dp"
         android:layout_height="61dp"
         android:background="@drawable/rounded_edittext"
         android:padding="15sp"

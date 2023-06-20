@@ -4,8 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PersonalDetails"
-    android:background="#F3F4EF">
+    android:background="#F3F4EF"
+    tools:context=".PersonalDetails">
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="121dp"
+        android:layout_height="115dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.054"
+        tools:srcCompat="@tools:sample/avatars" />
 
     <EditText
         android:id="@+id/linkedIn"
@@ -20,51 +33,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.807" />
-
-    <EditText
-        android:id="@+id/dob"
-        android:layout_width="346dp"
-        android:layout_height="77dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Date of Birth"
-        android:padding="15sp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
-
-    <EditText
-        android:id="@+id/phone"
-        android:layout_width="346dp"
-        android:layout_height="77dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Phone"
-        android:padding="15sp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/email"
-        android:layout_width="346dp"
-        android:layout_height="77dp"
-        android:background="@drawable/rounded_edittext"
-        android:hint="Email"
-        android:padding="15sp"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintVertical_bias="0.865" />
 
     <EditText
         android:id="@+id/address"
@@ -79,7 +48,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.411" />
 
     <EditText
         android:id="@+id/name"
@@ -94,19 +63,64 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044" />
+        app:layout_constraintVertical_bias="0.253" />
+
+    <EditText
+        android:id="@+id/phone"
+        android:layout_width="346dp"
+        android:layout_height="77dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Phone"
+        android:padding="15sp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.711" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="346dp"
+        android:layout_height="77dp"
+        android:background="@drawable/rounded_edittext"
+        android:hint="Email"
+        android:padding="15sp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.558" />
 
     <Button
         android:id="@+id/Done"
         android:layout_width="124dp"
         android:layout_height="53dp"
         android:backgroundTint="#aec6cf"
-        android:textColor="#000000"
         android:text="Done"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="136dp"
+        android:layout_height="58dp"
+        android:backgroundTint="#69B2CD"
+        android:text="Add photo"
+        android:textColor="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.095" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
