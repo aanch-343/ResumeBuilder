@@ -80,9 +80,12 @@ public class Template1 extends AppCompatActivity {
         query1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
-                String fdesc=latestSnapshot.child("objective").getValue(String.class);
-                desc.setText(fdesc);
+                if (snapshot.hasChildren()) {
+                    DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+                    String fdesc=latestSnapshot.child("objective").getValue(String.class);
+                    desc.setText(fdesc);
+                }
+
             }
 
             @Override

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFCCB5"
+    android:orientation="vertical"
+    android:paddingLeft="21dp"
+    android:paddingRight="21dp"
+    >
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="311dp"
+        android:layout_height="76dp"
+        android:text="ADD DETAILS"
+        android:textColor="#009688"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/edtskill"
+        android:layout_width="310dp"
+        android:layout_height="72dp"
+        android:text=""
+        android:hint="@string/year"
+        android:layout_marginTop="10dp"
+        android:background="#EFF1ED"/>
+
+    <Button
+        android:id="@+id/btnAction"
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:backgroundTint="#009688"
+        android:text="ADD"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>
