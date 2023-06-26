@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "337606804579",
-    "project_id": "resume-builder-6bb89",
-    "storage_bucket": "resume-builder-6bb89.appspot.com"
+    "project_number": "281039095997",
+    "project_id": "resumebuilder002-3c3f3",
+    "storage_bucket": "resumebuilder002-3c3f3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:337606804579:android:b0a81a616735e822c96456",
+        "mobilesdk_app_id": "1:281039095997:android:bcf023853c6366475e4fd4",
         "android_client_info": {
           "package_name": "com.example.resumebuilder"
         }
       },
       "oauth_client": [
         {
-          "client_id": "337606804579-5uf7lhvo26n6820kp91a775qu12np3pg.apps.googleusercontent.com",
+          "client_id": "281039095997-ijb7hkct8ebnepka5g8bh2fdtvao7fle.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDg4C1e81ssDXhs8GTjn83fkhCWOvbnMrk"
+          "current_key": "AIzaSyC8vxRnkXra33Sl0cBCW-NQoCiT72DYBIA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "337606804579-5uf7lhvo26n6820kp91a775qu12np3pg.apps.googleusercontent.com",
+              "client_id": "281039095997-ijb7hkct8ebnepka5g8bh2fdtvao7fle.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
