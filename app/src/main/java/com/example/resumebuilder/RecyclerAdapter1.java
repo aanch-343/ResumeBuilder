@@ -16,14 +16,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.ViewHolder> {
     Context context;
     ArrayList<EducationModel> educationModelArrayList;
-    RecyclerAdapter1(Context context, ArrayList<EducationModel> educationModelArrayList){
-        this.context=context;
-        this.educationModelArrayList=educationModelArrayList;
+
+    RecyclerAdapter1(Context context, ArrayList<EducationModel> educationModelArrayList) {
+        this.context = context;
+        this.educationModelArrayList = educationModelArrayList;
     }
     @NonNull
     @Override
@@ -67,7 +72,10 @@ public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.View
                         String course=edtcourse.getText().toString();
                         educationModelArrayList.set(position,new EducationModel(school,year,course,grade));
                         notifyItemChanged(position);
+
+
                         dialog.dismiss();
+
                     }
                 });
                 dialog.show();
@@ -84,6 +92,7 @@ public class RecyclerAdapter1 extends RecyclerView.Adapter<RecyclerAdapter1.View
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+
                                 educationModelArrayList.remove(position);
                                 notifyItemRemoved(position);
 

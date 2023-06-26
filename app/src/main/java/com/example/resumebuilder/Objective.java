@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,6 +31,7 @@ public class Objective extends AppCompatActivity {
                 HashMap<String,Object> o=new HashMap<String, Object>();
                 o.put("objective",obj.getText().toString());
                 FirebaseDatabase.getInstance().getReference().child("Objective").push().setValue(o);
+                Toast.makeText(Objective.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }
