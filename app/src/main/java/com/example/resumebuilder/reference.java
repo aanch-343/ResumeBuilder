@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -36,6 +37,7 @@ public class reference extends AppCompatActivity {
                 ref.put("Company Name",companyName.getText().toString());
                 ref.put("Email",email.getText().toString());
                 FirebaseDatabase.getInstance().getReference().child("Reference").push().setValue(ref);
+                Toast.makeText(reference.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }

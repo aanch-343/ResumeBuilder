@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">ResumeBuilder</string>
-    <string name="grade_score">Grade/Score</string>
+    <string name="grade_score">CGPA/percentagee</string>
     <string name="school_university">School/University</string>
-    <string name="course">course</string>
+    <string name="course">course </string>
     <string name="year">year</string>
     <string name="skills">Skills</string>
     <string name="CompanyName">CompanyName</string>

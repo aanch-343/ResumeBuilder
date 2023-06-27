@@ -15,10 +15,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ViewResume"
-            android:exported="false"
-            android:parentActivityName=".Menu" />
-        <activity
             android:name=".Template1"
             android:exported="false"
             android:parentActivityName=".Templates" />
