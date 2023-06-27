@@ -57,6 +57,9 @@ public class Template1 extends AppCompatActivity {
 
         desc=(TextView)findViewById(R.id.profiled);
 
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
                 personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
                 Query query=personalDetails.limitToLast(1);
@@ -107,9 +110,6 @@ public class Template1 extends AppCompatActivity {
 
                     }
                 });
-        download.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
                 xmlToPdf();
             }
         });
