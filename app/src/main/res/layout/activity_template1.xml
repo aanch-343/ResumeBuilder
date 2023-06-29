@@ -67,7 +67,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/work2"
+        android:id="@+id/job"
         android:layout_width="199dp"
         android:layout_height="48dp"
         android:layout_marginTop="328dp"
@@ -81,21 +81,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/workd2"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="424dp"
-        android:text="Prepares journal entries for year end audits"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <TextView-->
+<!--        android:id="@+id/workd2"-->
+<!--        android:layout_width="260dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:layout_marginTop="424dp"-->
+<!--        android:text="Prepares journal entries for year end audits"-->
+<!--        android:textColor="#000000"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.887"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TextView
-        android:id="@+id/work3"
+        android:id="@+id/companyName"
         android:layout_width="115dp"
         android:layout_height="48dp"
         android:layout_marginTop="352dp"
@@ -110,7 +110,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/workd4"
+        android:id="@+id/detail"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="376dp"
@@ -140,14 +140,14 @@
         android:id="@+id/edu"
         android:layout_width="92dp"
         android:layout_height="33dp"
-        android:layout_marginTop="516dp"
+        android:layout_marginTop="452dp"
         android:text="Education"
         android:textAllCaps="false"
         android:textColor="#5E5D5D"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.087"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -160,27 +160,27 @@
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.869" />
 
     <TextView
-        android:id="@+id/work8"
+        android:id="@+id/course"
         android:layout_width="150dp"
         android:layout_height="48dp"
-        android:layout_marginTop="532dp"
-        android:text="Bachelor of Fashion Design"
+        android:layout_marginTop="476dp"
+        android:text="Bacheolors of Engieering"
         android:textAllCaps="false"
         android:textSize="12sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/workd"
+        android:id="@+id/grade"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="588dp"
@@ -206,7 +206,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/workd3"
+        android:id="@+id/year"
         android:layout_width="260dp"
         android:layout_height="48dp"
         android:layout_marginTop="556dp"
@@ -219,7 +219,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/skilld2"
+        android:id="@+id/skill1"
         android:layout_width="108dp"
         android:layout_height="48dp"
         android:layout_marginTop="648dp"
@@ -235,17 +235,17 @@
         app:layout_constraintVertical_bias="0.566" />
 
     <TextView
-        android:id="@+id/work6"
+        android:id="@+id/school"
         android:layout_width="199dp"
         android:layout_height="48dp"
-        android:layout_marginTop="508dp"
+        android:layout_marginTop="428dp"
         android:text="Really Great University"
         android:textAllCaps="false"
         android:textColor="#5E5D5D"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.646"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -264,7 +264,7 @@
         app:layout_constraintVertical_bias="0.365" />
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/dur"
         android:layout_width="140dp"
         android:layout_height="48dp"
         android:layout_marginTop="352dp"

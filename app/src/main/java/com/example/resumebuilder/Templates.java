@@ -43,6 +43,8 @@ ImageButton temp1,temp2,temp3,temp4,temp5,temp6;
             getSupportActionBar().hide();
         }
         temp1=(ImageButton)findViewById(R.id.Template1);
+        temp2=(ImageButton)findViewById(R.id.Template2);
+
 
         temp1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +54,17 @@ ImageButton temp1,temp2,temp3,temp4,temp5,temp6;
 
                 Intent i1=new Intent(Templates.this, Template1.class);
                 startActivity(i1);
+
+            }
+        });
+        temp2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                Intent i2=new Intent(Templates.this, Template2.class);
+                startActivity(i2);
 
             }
         });

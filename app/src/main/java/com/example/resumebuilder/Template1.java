@@ -3,21 +3,10 @@ package com.example.resumebuilder;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.graphics.Canvas;
-import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
@@ -26,18 +15,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class Template1 extends AppCompatActivity {
-    TextView name,phone,address,email,linkedin;
+    TextView name,phone,address,email,job,company,duration,detail,school,course,year,grade;
     ImageView picture;
     TextView desc;
-    DatabaseReference personalDetails,objective;
-    ImageButton download;
+    DatabaseReference personalDetails,objective,skills,Experience,Education,Reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,118 +31,141 @@ public class Template1 extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-
         name=(TextView)findViewById(R.id.Name);
         phone=(TextView)findViewById(R.id.phone);
         address=(TextView)findViewById(R.id.address);
         email=(TextView)findViewById(R.id.mail);
-        linkedin=(TextView)findViewById(R.id.link);
         picture=(ImageView)findViewById(R.id.photo);
-        download=(ImageButton)findViewById(R.id.down);
+        job=(TextView)findViewById(R.id.job);
+        duration=(TextView)findViewById(R.id.dur);
+        detail=(TextView)findViewById(R.id.detail);
+        company=(TextView)findViewById(R.id.companyName);
+        school=(TextView)findViewById(R.id.school);
+        course=(TextView)findViewById(R.id.course);
+        year=(TextView)findViewById(R.id.year);
+        grade=(TextView)findViewById(R.id.grade);
 
         desc=(TextView)findViewById(R.id.profiled);
 
-        download.setOnClickListener(new View.OnClickListener() {
+        personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
+        Query query=personalDetails.limitToLast(1);
+        query.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View view) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
 
-                personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
-                Query query=personalDetails.limitToLast(1);
-                query.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+                Model model = latestSnapshot.getValue(Model.class);
+                String imageUrl = model.getImageUri();
+                if (!isDestroyed() && imageUrl != null) {
+                    Glide.with(Template1.this).load(Uri.parse(imageUrl)).into(picture);
+                }
 
-                        Model model = latestSnapshot.getValue(Model.class);
-                        String imageUrl = model.getImageUri();
-                        if (!isDestroyed() && imageUrl != null) {
-                            Glide.with(Template1.this).load(Uri.parse(imageUrl)).into(picture);
-                        }
+                String fname=latestSnapshot.child("name").getValue(String.class);
+                String fphone=latestSnapshot.child("phone").getValue(String.class);
+                String fadd=latestSnapshot.child("address").getValue(String.class);
+                String fmail=latestSnapshot.child("email").getValue(String.class);
+                String flinkedin=latestSnapshot.child("LinkedIn").getValue(String.class);
 
-                        String fname=latestSnapshot.child("name").getValue(String.class);
-                        String fphone=latestSnapshot.child("phone").getValue(String.class);
-                        String fadd=latestSnapshot.child("address").getValue(String.class);
-                        String fmail=latestSnapshot.child("email").getValue(String.class);
-                        String flinkedin=latestSnapshot.child("LinkedIn").getValue(String.class);
+                name.setText(fname);
+                phone.setText(fphone);
+                address.setText(fadd);
+                email.setText(fmail);
+          
+            }
 
-                        name.setText(fname);
-                        phone.setText(fphone);
-                        address.setText(fadd);
-                        email.setText(fmail);
-                        linkedin.setText(flinkedin);
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+        });
 
-                    }
+        objective=FirebaseDatabase.getInstance().getReference().child("Objective");
+        Query query1=objective.limitToLast(1);
+        query1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChildren()) {
+                    DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+                    String fdesc=latestSnapshot.child("objective").getValue(String.class);
+                    desc.setText(fdesc);
+                }
 
-                });
+            }
 
-                objective=FirebaseDatabase.getInstance().getReference().child("Objective");
-                Query query1=objective.limitToLast(1);
-                query1.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
-                        String fdesc=latestSnapshot.child("objective").getValue(String.class);
-                        desc.setText(fdesc);
-                    }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                xmlToPdf();
             }
         });
-        }
+        skills=FirebaseDatabase.getInstance().getReference().child("Skills");
+        Query query2=skills.limitToLast(1);
+        query2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChildren()) {
+                    DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+                    String fdesc=latestSnapshot.child("Skills").getValue(String.class);
+                    desc.setText(fdesc);
+                }
 
-    private void xmlToPdf() {
-        View view= LayoutInflater.from(Template1.this).inflate(R.layout.activity_template1,null);
-        //DisplayMetrics displayMetrics=new DisplayMetrics();
-//                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.R)
-//                    this.getDisplay().getRealMetrics(displayMetrics);
-//                else
-//                    this.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+//        Education= FirebaseDatabase.getInstance().getReference().child("Education");
+//        Query query3=Education.limitToLast(1);
+//        query3.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+//
+//
+//                String school1=latestSnapshot.child("School").getValue(String.class);
+//                String year1=latestSnapshot.child("Course").getValue(String.class);
+//                String course1=latestSnapshot.child("Year").getValue(String.class);
+//                String grade1=latestSnapshot.child("Grade").getValue(String.class);
+//                school.setText(school1);
+//              year.setText(year1);
+//                course.setText(course1);
+//                grade.setText(grade1);
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//
+//        });
+        Experience= FirebaseDatabase.getInstance().getReference().child("Experience");
+        Query query4=Experience.limitToLast(1);
+        query4.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
 
 
-        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
-        getWindowManager().getDefaultDisplay().getRealMetrics(displayMetrics);
+                String company1=latestSnapshot.child("Company").getValue(String.class);
+                String detail1=latestSnapshot.child("Details").getValue(String.class);
+                String dur1=latestSnapshot.child("Dur").getValue(String.class);
+                String job1=latestSnapshot.child("Job").getValue(String.class);
+                company.setText(company1);
+               detail.setText(detail1);
+               duration.setText(dur1);
+               job.setText(job1);
 
-        view.measure(View.MeasureSpec.makeMeasureSpec(displayMetrics.widthPixels,View.MeasureSpec.EXACTLY),
-                View.MeasureSpec.makeMeasureSpec(displayMetrics.heightPixels,View.MeasureSpec.EXACTLY));
+            }
 
-        view.layout(0,0,displayMetrics.widthPixels,displayMetrics.heightPixels);
-        PdfDocument document=new PdfDocument();
-        int viewWidth=view.getMeasuredWidth();
-        int viewHeight=view.getMeasuredHeight();
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-        PdfDocument.PageInfo pageInfo= new PdfDocument.PageInfo.Builder(viewWidth,viewHeight,1).create();
-        PdfDocument.Page page=document.startPage(pageInfo);
+            }
 
-        Canvas canvas=page.getCanvas();
-        view.draw(canvas);
-
-        document.finishPage(page);
-
-        File downloadsDir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        String fileName="resume.pdf";
-        File file=new File(downloadsDir,fileName);
-        try{
-            FileOutputStream fos= new FileOutputStream(file);
-            document.writeTo(fos);
-            document.close();
-            fos.close();
-            Toast.makeText(Template1.this,"Downloaded as PDF",Toast.LENGTH_SHORT).show();
-        }catch(FileNotFoundException e){
-            Log.d("mylog","Error while writing"+ e.toString());
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        });
 
     }
 }
