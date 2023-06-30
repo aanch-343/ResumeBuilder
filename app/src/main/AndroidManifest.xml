@@ -12,7 +12,7 @@
         android:theme="@style/Theme.ResumeBuilder"
         tools:targetApi="31">
         <activity
-            android:name=".SplashActivity"
+            android:name=".Template2"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
@@ -61,7 +61,7 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
-            android:name=".Template2"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

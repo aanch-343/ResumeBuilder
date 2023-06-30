@@ -36,13 +36,13 @@
             </LinearLayout>
 
             <View
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="3dp"
                 android:background="#3245AF" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="264dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -55,27 +55,27 @@
                     <TextView
                         android:id="@+id/phone"
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
+                        android:layout_height="27dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="   234-334-3344" />
+                        android:text="234-334-3344" />
 
                     <TextView
                         android:id="@+id/email"
                         android:layout_width="match_parent"
-                        android:layout_height="62dp"
-                        android:text="  patrixx@gmail.com" />
+                        android:layout_height="81dp"
+                        android:text="patrixx@gmail.com"
+                        android:textSize="12sp" />
 
                     <TextView
                         android:id="@+id/address"
-                        android:layout_width="match_parent"
-                        android:layout_height="89dp"
+                        android:layout_width="149dp"
+                        android:layout_height="92dp"
                         android:layout_weight="1"
                         android:text="Address: 123 Street, City, Country" />
 
                     <View
-                        android:layout_width="match_parent"
-                        android:layout_height="5dp"
+                        android:layout_width="149dp"
+                        android:layout_height="7dp"
                         android:background="#3245AF" />
 
                 </LinearLayout>
@@ -89,8 +89,14 @@
                     <TextView
                         android:id="@+id/objective"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="53dp"
                         android:text="Objective: Seeking a challenging position in a dynamic company." />
+
+                    <TextView
+                        android:id="@+id/linkedIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="29dp"
+                        android:text=" linkedin.com/in/johndoe123" />
 
                     <TextView
                         android:id="@+id/reference"
@@ -104,37 +110,39 @@
                     <TextView
                         android:id="@+id/referenceName"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="31dp"
                         android:text="Reference Name: John Doe" />
 
                     <TextView
-                        android:id="@+id/jobTitle"
+                        android:id="@+id/jobref"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="31dp"
                         android:text="Job Title: Software Engineer" />
 
                     <TextView
-                        android:id="@+id/companyName"
+                        android:id="@+id/companyref"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:text="Company Name: ABC Corporation" />
 
                     <TextView
                         android:id="@+id/emailRef"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="33dp"
                         android:text="Email: john.doe@example.com" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp"
-                        android:text="Education"
-                        android:textColor="#3F51B5"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+
                 </LinearLayout>
             </LinearLayout>
 
+            <TextView
+                android:layout_width="247dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:text="       Education"
+                android:textColor="#3F51B5"
+                android:textSize="20sp"
+                android:textStyle="bold" />
             <RelativeLayout
                 android:id="@+id/relative"
                 android:layout_width="243dp"
@@ -164,7 +172,7 @@
                 android:layout_width="247dp"
                 android:layout_height="32dp"
                 android:layout_gravity="end"
-                android:text="    Experience"
+                android:text="      Experience"
                 android:textColor="#3F51B5"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -199,7 +207,7 @@
                 android:layout_width="247dp"
                 android:layout_height="32dp"
                 android:layout_gravity="end"
-                android:text="      Skills"
+                android:text="          Skills"
                 android:textColor="#3F51B5"
                 android:textSize="20sp"
                 android:textStyle="bold" />

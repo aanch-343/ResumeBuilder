@@ -32,9 +32,9 @@ public class reference extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 HashMap<String,Object> ref= new HashMap<String, Object>();
-                ref.put("Reference Name",referenceName.getText().toString());
-                ref.put("Job Title",jobTitle.getText().toString());
-                ref.put("Company Name",companyName.getText().toString());
+                ref.put("Reference",referenceName.getText().toString());
+                ref.put("Job",jobTitle.getText().toString());
+                ref.put("Company",companyName.getText().toString());
                 ref.put("Email",email.getText().toString());
                 FirebaseDatabase.getInstance().getReference().child("Reference").push().setValue(ref);
                 Toast.makeText(reference.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
