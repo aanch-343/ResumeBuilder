@@ -44,6 +44,8 @@ ImageButton temp1,temp2,temp3,temp4,temp5,temp6;
         }
         temp1=(ImageButton)findViewById(R.id.Template1);
         temp2=(ImageButton)findViewById(R.id.Template2);
+        temp3=(ImageButton)findViewById(R.id.Template3);
+
 
 
         temp1.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,17 @@ ImageButton temp1,temp2,temp3,temp4,temp5,temp6;
 
 
                 Intent i2=new Intent(Templates.this, Template2.class);
+                startActivity(i2);
+
+            }
+        });
+        temp3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+
+                Intent i2=new Intent(Templates.this, Template3.class);
                 startActivity(i2);
 
             }

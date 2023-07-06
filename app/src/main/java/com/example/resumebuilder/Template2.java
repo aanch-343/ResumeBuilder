@@ -3,6 +3,8 @@ package com.example.resumebuilder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.annotation.SuppressLint;
@@ -18,9 +20,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 
 public class Template2 extends AppCompatActivity {
-
+  RecyclerView recyclerView1,recyclerView2,recyclerView3;
+  MyEduAdapter myEduAdapter;
+  MySkillAdapter myskillAdapter;
+  ArrayList<Templateedumodel> templateedumodelArrayList;
+  ArrayList<Templateskillmodel> templateskillmodelArrayList;
+  ArrayList<TemplateExpModel> templateExpModelArrayList;
     TextView name,phone,address,email,job,company,duration,detail,companyref,jobref,emailref,nameref,school,course,year,grade,linkdin,desc;
     DatabaseReference personalDetails,objective,skills,Experience,Education,Reference;
     @SuppressLint("MissingInflatedId")
@@ -41,6 +50,9 @@ public class Template2 extends AppCompatActivity {
         companyref=(TextView)findViewById(R.id.companyref);
         jobref=(TextView)findViewById(R.id.jobref);
         emailref=(TextView)findViewById(R.id.emailRef);
+        recyclerView1=findViewById(R.id.recyclerView1);
+        recyclerView2=findViewById(R.id.recyclerView2);
+        recyclerView3=findViewById(R.id.recyclerView3);
         personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
         Query query=personalDetails.limitToLast(1);
         query.addValueEventListener(new ValueEventListener() {
@@ -111,6 +123,49 @@ public class Template2 extends AppCompatActivity {
             }
 
         });
+        Education=FirebaseDatabase.getInstance().getReference("Education");
+        recyclerView1.setHasFixedSize(true);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+        templateedumodelArrayList=new ArrayList<>();
+        myEduAdapter=new MyEduAdapter(this,templateedumodelArrayList);
+        recyclerView1.setAdapter(myEduAdapter);
+        Education.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    Templateedumodel templateedumodel=dataSnapshot.getValue(Templateedumodel.class);
+                    templateedumodelArrayList.add(templateedumodel);
+                }
+                myEduAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+       skills=FirebaseDatabase.getInstance().getReference("Skills");
+        recyclerView3.setHasFixedSize(true);
+        recyclerView3.setLayoutManager(new LinearLayoutManager(this));
+        templateskillmodelArrayList=new ArrayList<>();
+        myskillAdapter=new MySkillAdapter(this,templateskillmodelArrayList);
+        recyclerView3.setAdapter(myskillAdapter);
+       skills.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                   Templateskillmodel templateskillmodel=dataSnapshot.getValue(Templateskillmodel.class);
+                   templateskillmodelArrayList.add(templateskillmodel);
+                }
+                myskillAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
 
     }
 }
