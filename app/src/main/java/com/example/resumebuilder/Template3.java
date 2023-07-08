@@ -2,14 +2,22 @@ package com.example.resumebuilder;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
+import com.gkemon.XMLtoPDF.PdfGenerator;
+import com.gkemon.XMLtoPDF.PdfGeneratorListener;
+import com.gkemon.XMLtoPDF.model.FailureResponse;
+import com.gkemon.XMLtoPDF.model.SuccessResponse;
+import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import org.xmlpull.v1.XmlPullParser;
 import com.bumptech.glide.Glide;
+import com.gkemon.XMLtoPDF.PdfGenerator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -17,12 +25,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+
 public class Template3 extends AppCompatActivity {
     TextView name,phone,address,email,job,company,duration,detail,school,course,year,grade,linkdin,nameref,jobref,companyref,emailref,skill1,skill2;
     ImageView picture;
     TextView desc;
+   Button download;
     DatabaseReference personalDetails,objective,skills,Experience,Education,Reference;
-
+    private PdfGenerator.XmlToPDFLifecycleObserver xmlToPDFLifecycleObserver;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,7 @@ public class Template3 extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
+       download=(Button)findViewById(R.id.button2);
         name=(TextView)findViewById(R.id.name);
         phone=(TextView)findViewById(R.id.phone);
         address=(TextView)findViewById(R.id.address);
@@ -52,6 +63,12 @@ public class Template3 extends AppCompatActivity {
         linkdin=(TextView)findViewById(R.id.linkedIn);
         skill1=(TextView)findViewById(R.id.skill1);
         skill2=(TextView)findViewById(R.id.skill2);
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                xmlToPdf();
+            }
+        });
 
         personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
         Query query=personalDetails.limitToLast(1);
@@ -127,10 +144,10 @@ public class Template3 extends AppCompatActivity {
                 DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
 
 
-                String school1=latestSnapshot.child("School").getValue(String.class);
-                String year1=latestSnapshot.child("Course").getValue(String.class);
-                String course1=latestSnapshot.child("Year").getValue(String.class);
-                String grade1=latestSnapshot.child("Grade").getValue(String.class);
+                String school1=latestSnapshot.child("school").getValue(String.class);
+                String year1=latestSnapshot.child("course").getValue(String.class);
+                String course1=latestSnapshot.child("year").getValue(String.class);
+                String grade1=latestSnapshot.child("grade").getValue(String.class);
                 school.setText(school1);
               year.setText(year1);
                 course.setText(course1);
@@ -195,5 +212,45 @@ public class Template3 extends AppCompatActivity {
 
         });
 
+    }
+    public void xmlToPdf() {
+
+        View v = findViewById(R.id.mainView);
+        PdfGenerator.getBuilder()
+                .setContext(Template3.this)
+                .fromViewSource()
+                .fromView(v)
+                .setFileName("Resume")
+                .setFolderNameOrPath("Resume-builder")
+                .savePDFSharedStorage(xmlToPDFLifecycleObserver)
+                .actionAfterPDFGeneration(PdfGenerator.ActionAfterPDFGeneration.OPEN)
+                .build(new PdfGeneratorListener() {
+                    @Override
+                    public void onFailure(FailureResponse failureResponse) {
+                        super.onFailure(failureResponse);
+                        Toast.makeText(Template3.this, "" + failureResponse.getErrorMessage(), Toast.LENGTH_LONG).show();
+
+                    }
+
+                    @Override
+                    public void showLog(String log) {
+                        super.showLog(log);
+                    }
+
+                    @Override
+                    public void onStartPDFGeneration() {
+                                /*When PDF generation begins to start*/
+                    }
+
+                    @Override
+                    public void onFinishPDFGeneration() {
+                        Toast.makeText(Template3.this, "done", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onSuccess(SuccessResponse response) {
+                        super.onSuccess(response);
+                    }
+                });
     }
 }

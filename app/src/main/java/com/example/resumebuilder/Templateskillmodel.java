@@ -6,4 +6,8 @@ public class Templateskillmodel {
     public String getTalent() {
         return talent;
     }
+
+    public void setTalent(String talent) {
+        this.talent = talent;
+    }
 }

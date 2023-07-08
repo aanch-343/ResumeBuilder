@@ -63,10 +63,10 @@ public class Education extends AppCompatActivity {
                         String course=edtcourse.getText().toString();
                         arrEducation.add(new EducationModel(school,year,course,grade));
                         HashMap<String,Object> ref= new HashMap<String, Object>();
-                        ref.put("Year",edtyear.getText().toString());
-                        ref.put("Grade",edtgrade.getText().toString());
-                        ref.put("School",edtschool.getText().toString());
-                        ref.put("Course",edtcourse.getText().toString());
+                        ref.put("year",edtyear.getText().toString());
+                        ref.put("grade",edtgrade.getText().toString());
+                        ref.put("school",edtschool.getText().toString());
+                        ref.put("course",edtcourse.getText().toString());
                         FirebaseDatabase.getInstance().getReference().child("Education").push().setValue(ref);
                         Toast.makeText(Education.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
                         adapter.notifyItemInserted(arrEducation.size()-1);

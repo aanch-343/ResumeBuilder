@@ -4,7 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Template2">
+    tools:context=".Template2"
+    android:orientation="vertical"
+  >
+    <LinearLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="673dp">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -143,16 +149,17 @@
                 android:textColor="#3F51B5"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
             <RelativeLayout
                 android:id="@+id/relative"
                 android:layout_width="243dp"
-                android:layout_height="225dp"
+                android:layout_height="309dp"
                 android:layout_below="@id/ll2"
                 android:layout_gravity="end"
                 android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView1"
+                <ListView
+                    android:id="@+id/list1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -178,15 +185,15 @@
                 android:textStyle="bold" />
 
             <RelativeLayout
-                android:id="@+id/relative1"
+                android:id="@+id/relativ2"
                 android:layout_width="243dp"
-                android:layout_height="225dp"
+                android:layout_height="299dp"
                 android:layout_below="@id/experienceText"
                 android:layout_gravity="end"
                 android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView2"
+                <ListView
+                    android:id="@+id/list2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -215,13 +222,13 @@
             <RelativeLayout
                 android:id="@+id/relative2"
                 android:layout_width="243dp"
-                android:layout_height="225dp"
+                android:layout_height="187dp"
                 android:layout_below="@id/Skills"
                 android:layout_gravity="end"
                 android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView3"
+                <ListView
+                    android:id="@+id/list3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
@@ -232,5 +239,18 @@
             </RelativeLayout>
         </LinearLayout>
     </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/Green_63"
+            android:text="Download" />
+    </LinearLayout>
 
 </LinearLayout>
