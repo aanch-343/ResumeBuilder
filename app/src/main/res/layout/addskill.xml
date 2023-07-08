@@ -20,7 +20,8 @@
         android:layout_width="310dp"
         android:layout_height="72dp"
         android:text=""
-        android:hint="@string/year"
+        android:padding="10dp"
+        android:hint="@string/skills"
         android:layout_marginTop="10dp"
         android:background="#EFF1ED"/>
 

@@ -1,420 +1,228 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".Template1">
+    tools:context=".Template1"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/skill"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="636dp"
-        android:text="Skill"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="673dp">
 
-    <TextView
-        android:id="@+id/Name"
-        android:layout_width="133dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="16dp"
-        android:text="Elena Gilbert"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/Designation"
-        android:layout_width="201dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="104dp"
-        android:text="FASHION DESIGNER"
-        android:textAllCaps="true"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/work"
-        android:layout_width="98dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="316dp"
-        android:text="Work
-                        Experience"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.111"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll1">
 
-    <TextView
-        android:id="@+id/job"
-        android:layout_width="199dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="328dp"
-        android:text="Senior Fashion Designer"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:layout_width="138dp"
+                        android:layout_height="173dp"
+                        android:src="@drawable/elena"
+                        android:id="@+id/photo"/>
 
-<!--    <TextView-->
-<!--        android:id="@+id/workd2"-->
-<!--        android:layout_width="260dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:layout_marginTop="424dp"-->
-<!--        android:text="Prepares journal entries for year end audits"-->
-<!--        android:textColor="#000000"-->
-<!--        android:textSize="14sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.887"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
+                    <TextView
+                        android:layout_width="178dp"
+                        android:layout_height="59dp"
+                        android:layout_gravity="center"
+                        android:text="  Elena"
+                        android:textSize="34sp"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/name"/>
+                </LinearLayout>
 
-    <TextView
-        android:id="@+id/companyName"
-        android:layout_width="115dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="352dp"
-        android:text="Really Great Studio"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="12sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black" />
 
-    <TextView
-        android:id="@+id/detail"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="376dp"
-        android:text="Reviews all ledgers and annual budget reports"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.887"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/ll2">
 
-    <View
-        android:id="@+id/divider5"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.577" />
+                    <LinearLayout
+                        android:layout_width="174dp"
+                        android:layout_height="148dp"
+                        android:orientation="vertical"
+                        android:id="@+id/ll2.1">
 
-    <TextView
-        android:id="@+id/edu"
-        android:layout_width="92dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="452dp"
-        android:text="Education"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text=" Profile"
+                            android:textColor="@android:color/black"
+                            android:textSize="22sp"
+                            android:textStyle="bold"/>
 
-    <View
-        android:id="@+id/divider6"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.869" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text=" Objective"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:id="@+id/obj"/>
 
-    <TextView
-        android:id="@+id/course"
-        android:layout_width="150dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="476dp"
-        android:text="Bacheolors of Engieering"
-        android:textAllCaps="false"
-        android:textSize="12sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    </LinearLayout>
 
-    <TextView
-        android:id="@+id/grade"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="588dp"
-        android:text="Graduated with GPA of 3.850"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/skilld"
-        android:layout_width="108dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="668dp"
-        android:text="Graphic Design"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text=" xyz@gmail.com "
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:id="@+id/email"/>
 
-    <TextView
-        android:id="@+id/year"
-        android:layout_width="260dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="556dp"
-        android:text="Attended Sept. 2013 to June 2017"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="ayx street 4th cross"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:id="@+id/address"/>
 
-    <TextView
-        android:id="@+id/skill1"
-        android:layout_width="108dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="648dp"
-        android:layout_marginBottom="35dp"
-        android:text="Illustration"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.459"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="lindin/in"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:id="@+id/linkedIn"/>
 
-    <TextView
-        android:id="@+id/school"
-        android:layout_width="199dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="428dp"
-        android:text="Really Great University"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="927-3930-222"
+                            android:textColor="@android:color/black"
+                            android:textSize="16sp"
+                            android:id="@+id/phone"/>
 
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.365" />
+                    </LinearLayout>
+                </LinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black" />
 
-    <TextView
-        android:id="@+id/dur"
-        android:layout_width="140dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="352dp"
-        android:text="Sept 2019 to Present"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/education"
+                    android:layout_width="170dp"
+                    android:layout_height="56dp"
+                    android:text="Education"
+                    android:textColor="#1C0202"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <View
-        android:id="@+id/divider4"
-        android:layout_width="1dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="350dp"
-        android:layout_marginEnd="158dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="264dp">
 
-    <TextView
-        android:id="@+id/profile"
-        android:layout_width="85dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="156dp"
-        android:text="Profile"
-        android:textAllCaps="false"
-        android:textColor="#5E5D5D"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <ListView
+                        android:id="@+id/list1"
+                        android:layout_width="match_parent"
+                        android:layout_height="261dp"
+                        android:layout_below="@id/education"
+                        tools:ignore="NotSibling" />
 
-    <TextView
-        android:id="@+id/phone"
-        android:layout_width="149dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="160dp"
-        android:text="123-456-7890"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black" />
+                <TextView
+                    android:id="@+id/experienceText"
+                    android:layout_width="170dp"
+                    android:layout_height="56dp"
+                    android:text="Experience"
+                    android:textColor="#1C0202"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="155dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="188dp"
-        android:text="123 Anywhere St., Any City"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="261dp">
 
-    <TextView
-        android:id="@+id/profiled"
-        android:layout_width="196dp"
-        android:layout_height="101dp"
-        android:layout_marginTop="192dp"
-        android:text="At a fashion designer, I have extensive experience budgeting for MNCs. At the moment, I'm seeking management positions."
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                    <ListView
+                        android:id="@+id/list2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@id/experienceText"
+                        tools:ignore="NotSibling" />
 
-    <TextView
-        android:id="@+id/link"
-        android:layout_width="155dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="272dp"
-        android:text="linkedin.com/in/elena-gilbert"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@android:color/black" />
+                <TextView
+                    android:id="@+id/skill"
+                    android:layout_width="170dp"
+                    android:layout_height="56dp"
+                    android:text="Skills"
+                    android:textColor="#1C0202"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/mail"
-        android:layout_width="155dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="232dp"
-        android:text="elena@gmail.com"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="190dp">
 
-    <View
-        android:id="@+id/divider"
-        android:layout_width="350dp"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.173" />
+                    <ListView
+                        android:id="@+id/list3"
+                        android:layout_width="match_parent"
+                        android:layout_height="198dp"
+                        android:layout_below="@id/skill"
+                        tools:ignore="NotSibling" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="1dp"
-        android:layout_height="130dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginEnd="180dp"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                </RelativeLayout>
 
-    <ImageView
-        android:id="@+id/photo"
-        android:layout_width="106dp"
-        android:layout_height="125dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.898"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elena" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/down"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginBottom="12dp"
-        android:contentDescription="download"
-        android:scaleType="fitXY"
-        android:background="@drawable/rounded_corner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.954"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@color/Green_63"
+            android:text="Download" />
+    </LinearLayout>
+
+</LinearLayout>

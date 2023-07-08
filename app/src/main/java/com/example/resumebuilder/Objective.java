@@ -2,6 +2,7 @@ package com.example.resumebuilder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +33,8 @@ public class Objective extends AppCompatActivity {
                 o.put("objective",obj.getText().toString());
                 FirebaseDatabase.getInstance().getReference().child("Objective").push().setValue(o);
                 Toast.makeText(Objective.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
+                Intent i1=new Intent(Objective.this,Menuu.class) ;
+                startActivity(i1);
             }
         });
     }

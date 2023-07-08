@@ -100,6 +100,8 @@ public class PersonalDetails extends AppCompatActivity {
                         m.put("imageUri", uri.toString());
                         db.push().setValue(m);
                         Toast.makeText(PersonalDetails.this,"Uploaded Successfully",Toast.LENGTH_SHORT).show();
+                        Intent i1=new Intent(PersonalDetails.this,Menuu.class) ;
+                        startActivity(i1);
 
                     }
                 });

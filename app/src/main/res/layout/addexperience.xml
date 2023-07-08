@@ -23,6 +23,7 @@
         android:layout_width="310dp"
         android:layout_height="72dp"
         android:text=""
+        android:padding="10dp"
         android:hint="@string/CompanyName"
         android:layout_marginTop="10dp"
         android:background="#EFF1ED"/>
@@ -32,6 +33,7 @@
         android:layout_width="308dp"
         android:layout_height="72dp"
         android:text=""
+        android:padding="10dp"
         android:hint="@string/Jobtitle"
         android:layout_marginTop="10dp"
         android:background="#EFF1ED"/>
@@ -41,6 +43,7 @@
         android:layout_width="307dp"
         android:layout_height="72dp"
         android:text=""
+        android:padding="10dp"
         android:hint="@string/Duration"
         android:layout_marginTop="10dp"
         android:background="#EFF1ED"/>
@@ -50,6 +53,7 @@
         android:layout_width="310dp"
         android:layout_height="74dp"
         android:text=""
+        android:padding="10dp"
         android:hint="@string/Details"
         android:layout_marginTop="10dp"
         android:background="#EFF1ED"/>
