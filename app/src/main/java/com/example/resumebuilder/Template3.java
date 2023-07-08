@@ -6,6 +6,8 @@ import com.gkemon.XMLtoPDF.PdfGenerator;
 import com.gkemon.XMLtoPDF.PdfGeneratorListener;
 import com.gkemon.XMLtoPDF.model.FailureResponse;
 import com.gkemon.XMLtoPDF.model.SuccessResponse;
+
+import android.widget.ListView;
 import android.widget.Toast;
 import android.annotation.SuppressLint;
 import android.net.Uri;
@@ -25,14 +27,24 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 
 public class Template3 extends AppCompatActivity {
-    TextView name,phone,address,email,job,company,duration,detail,school,course,year,grade,linkdin,nameref,jobref,companyref,emailref,skill1,skill2;
-    ImageView picture;
-    TextView desc;
-   Button download;
+    TextView name,phone,address,email,companyref,jobref,emailref,nameref,linkdin,desc;
+    Button download;
     DatabaseReference personalDetails,objective,skills,Experience,Education,Reference;
+    ListView list1,list2,list3;
+    ArrayList<Edutemp> edutempArrayList;
+    ArrayList<Exptemp> exptempArrayList;
+    ArrayList<Skilltemp> skilltempArrayList;
+    FirebaseDatabase firebaseDatabaseducation,firebaseDatabaseexp,firebaseDatabaseskill;
+    ImageView picture;
+    ExpTempAdapter adapter2;
+    EduTempAdapter adapter1;
+    SkillTempAdapter adapter3;
     private PdfGenerator.XmlToPDFLifecycleObserver xmlToPDFLifecycleObserver;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,41 +53,40 @@ public class Template3 extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }
-       download=(Button)findViewById(R.id.button2);
+
+        download = (Button) findViewById(R.id.button2);
         name=(TextView)findViewById(R.id.name);
         phone=(TextView)findViewById(R.id.phone);
         address=(TextView)findViewById(R.id.address);
         email=(TextView)findViewById(R.id.email);
         picture=(ImageView)findViewById(R.id.photo);
-        job=(TextView)findViewById(R.id.job);
-        duration=(TextView)findViewById(R.id.dur);
-        detail=(TextView)findViewById(R.id.detail);
-        company=(TextView)findViewById(R.id.company);
-        school=(TextView)findViewById(R.id.school);
-        course=(TextView)findViewById(R.id.course);
-        year=(TextView)findViewById(R.id.year);
-        grade=(TextView)findViewById(R.id.grade);
-        nameref=(TextView)findViewById(R.id.referenceName);
-        companyref=(TextView)findViewById(R.id.companyref);
-        jobref=(TextView)findViewById(R.id.jobref);
-        emailref=(TextView)findViewById(R.id.emailRef);
-        desc=(TextView)findViewById(R.id.objective);
-        linkdin=(TextView)findViewById(R.id.linkedIn);
-        skill1=(TextView)findViewById(R.id.skill1);
-        skill2=(TextView)findViewById(R.id.skill2);
+        linkdin = (TextView) findViewById(R.id.linkedIn);
+        desc = (TextView) findViewById(R.id.obj);
+        nameref = (TextView) findViewById(R.id.referenceName);
+        companyref = (TextView) findViewById(R.id.companyref);
+        jobref = (TextView) findViewById(R.id.jobref);
+        emailref = (TextView) findViewById(R.id.emailRef);
+        list1 = findViewById(R.id.list1);
+        list2 = findViewById(R.id.list2);
+        list3 = findViewById(R.id.list3);
         download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 xmlToPdf();
             }
         });
-
         personalDetails= FirebaseDatabase.getInstance().getReference().child("Personal Details");
         Query query=personalDetails.limitToLast(1);
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
+
+                Model model = latestSnapshot.getValue(Model.class);
+                String imageUrl = model.getImageUri();
+                if (!isDestroyed() && imageUrl != null) {
+                    Glide.with(Template3.this).load(Uri.parse(imageUrl)).into(picture);
+                }
 
                 String fname=latestSnapshot.child("name").getValue(String.class);
                 String fphone=latestSnapshot.child("phone").getValue(String.class);
@@ -87,8 +98,7 @@ public class Template3 extends AppCompatActivity {
                 phone.setText(fphone);
                 address.setText(fadd);
                 email.setText(fmail);
-               linkdin.setText(flinkedin);
-
+                linkdin.setText(flinkedin);
 
             }
 
@@ -98,14 +108,14 @@ public class Template3 extends AppCompatActivity {
             }
 
         });
-        objective=FirebaseDatabase.getInstance().getReference().child("Objective");
-        Query query1=objective.limitToLast(1);
+        objective = FirebaseDatabase.getInstance().getReference().child("Objective");
+        Query query1 = objective.limitToLast(1);
         query1.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.hasChildren()) {
                     DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
-                    String fdesc=latestSnapshot.child("objective").getValue(String.class);
+                    String fdesc = latestSnapshot.child("objective").getValue(String.class);
                     desc.setText(fdesc);
                 }
 
@@ -116,88 +126,18 @@ public class Template3 extends AppCompatActivity {
 
             }
         });
-        skills=FirebaseDatabase.getInstance().getReference().child("Skills");
-        Query query2=skills.limitToLast(2);
+        Reference = FirebaseDatabase.getInstance().getReference().child("Reference");
+        Query query2 = Reference.limitToLast(1);
         query2.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChildren()) {
-
-                    DataSnapshot dataSnapshot = snapshot.getChildren().iterator().next();
-                    String fdesc=dataSnapshot.child("Skills").getValue(String.class);
-                    skill1.setText(fdesc);
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-        Education= FirebaseDatabase.getInstance().getReference().child("Education");
-        Query query3=Education.limitToLast(2);
-        query3.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
                 DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
 
 
-                String school1=latestSnapshot.child("school").getValue(String.class);
-                String year1=latestSnapshot.child("course").getValue(String.class);
-                String course1=latestSnapshot.child("year").getValue(String.class);
-                String grade1=latestSnapshot.child("grade").getValue(String.class);
-                school.setText(school1);
-              year.setText(year1);
-                course.setText(course1);
-                grade.setText(grade1);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-
-        });
-        Experience= FirebaseDatabase.getInstance().getReference().child("Experience");
-        Query query4=Experience.limitToLast(2);
-        query4.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
-
-
-                String company1=latestSnapshot.child("Company").getValue(String.class);
-                String detail1=latestSnapshot.child("Details").getValue(String.class);
-                String dur1=latestSnapshot.child("Dur").getValue(String.class);
-                String job1=latestSnapshot.child("Job").getValue(String.class);
-                company.setText(company1);
-                detail.setText(detail1);
-                duration.setText(dur1);
-                job.setText(job1);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-
-        });
-        Reference= FirebaseDatabase.getInstance().getReference().child("Reference");
-        Query query5=Reference.limitToLast(1);
-        query5.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                DataSnapshot latestSnapshot = snapshot.getChildren().iterator().next();
-
-
-                String namerefer=latestSnapshot.child("Reference").getValue(String.class);
-                String jobrefer=latestSnapshot.child("Job").getValue(String.class);
-                String companyrefer=latestSnapshot.child("Company").getValue(String.class);
-                String emailrefer=latestSnapshot.child("Email").getValue(String.class);
+                String namerefer = latestSnapshot.child("Reference").getValue(String.class);
+                String jobrefer = latestSnapshot.child("Job").getValue(String.class);
+                String companyrefer = latestSnapshot.child("Company").getValue(String.class);
+                String emailrefer = latestSnapshot.child("Email").getValue(String.class);
                 nameref.setText(namerefer);
                 jobref.setText(jobrefer);
                 companyref.setText(companyrefer);
@@ -212,6 +152,81 @@ public class Template3 extends AppCompatActivity {
 
         });
 
+        edutempArrayList = new ArrayList<Edutemp>();
+        adapter1 = new EduTempAdapter(Template3.this, R.layout.listeducation, edutempArrayList);
+
+        firebaseDatabaseducation = FirebaseDatabase.getInstance();
+        Education = firebaseDatabaseducation.getReference();
+        Education.child("Education").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                edutempArrayList.clear();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    String course = ds.child("course").getValue(String.class);
+                    String grade = ds.child("grade").getValue(String.class);
+                    String school = ds.child("school").getValue(String.class);
+                    String year = ds.child("year").getValue(String.class);
+                    edutempArrayList.add(new Edutemp("" + course, "" + grade, "" + school, "" + year));
+                    adapter1.notifyDataSetChanged();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        list1.setAdapter(adapter1);
+        exptempArrayList = new ArrayList<Exptemp>();
+        adapter2 = new ExpTempAdapter(Template3.this, R.layout.listexperience, exptempArrayList);
+
+        firebaseDatabaseexp = FirebaseDatabase.getInstance();
+        Experience = firebaseDatabaseexp.getReference();
+        Experience.child("Experience").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                exptempArrayList.clear();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    String company = ds.child("Company").getValue(String.class);
+                    String job = ds.child("Job").getValue(String.class);
+                    String dur = ds.child("Dur").getValue(String.class);
+                    String details = ds.child("Details").getValue(String.class);
+                    exptempArrayList.add(new Exptemp("" + company, "" + job, "" + dur, "" + details));
+                    adapter2.notifyDataSetChanged();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        list2.setAdapter(adapter2);
+        skilltempArrayList = new ArrayList<Skilltemp>();
+        adapter3 = new SkillTempAdapter(Template3.this, R.layout.listskill, skilltempArrayList);
+
+        firebaseDatabaseskill = FirebaseDatabase.getInstance();
+        skills = firebaseDatabaseducation.getReference();
+        skills.child("Skills").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                skilltempArrayList.clear();
+                for (DataSnapshot ds : snapshot.getChildren()) {
+                    String skill = ds.child("Skills").getValue(String.class);
+                    skilltempArrayList.add(new Skilltemp("" + skill));
+                    adapter3.notifyDataSetChanged();
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        list3.setAdapter(adapter3);
     }
     public void xmlToPdf() {
 
@@ -239,7 +254,7 @@ public class Template3 extends AppCompatActivity {
 
                     @Override
                     public void onStartPDFGeneration() {
-                                /*When PDF generation begins to start*/
+                        /*When PDF generation begins to start*/
                     }
 
                     @Override
@@ -252,5 +267,10 @@ public class Template3 extends AppCompatActivity {
                         super.onSuccess(response);
                     }
                 });
-    }
-}
+
+
+    }}
+
+
+
+

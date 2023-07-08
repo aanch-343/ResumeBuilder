@@ -5,268 +5,188 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Template3"
-    android:orientation="vertical"
-  >
-
+    android:orientation="vertical">
     <LinearLayout
         android:id="@+id/mainView"
         android:layout_width="match_parent"
-        android:layout_height="673dp">
+        android:layout_height="673dp"
+        >
 
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@id/name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:paddingTop="20dp"
-                        android:paddingBottom="20dp"
-                        android:text="Patricia Williamson"
-                        android:textColor="#3245AF"
-                        android:textSize="40sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="3dp"
-                    android:background="#3245AF" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="264dp"
-                    android:gravity="center"
+                    android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:id="@+id/ll"
-                        android:layout_width="162dp"
-                        android:layout_height="200dp"
+                        android:id="@+id/l1"
+                        android:layout_width="177dp"
+                        android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/phone"
-                            android:layout_width="match_parent"
-                            android:layout_height="27dp"
-                            android:layout_weight="1"
-                            android:text="234-334-3344" />
+                        <ImageView
+                            android:id="@+id/photo"
+                            android:layout_width="106dp"
+                            android:layout_height="125dp"
+                            android:src="@drawable/elena"
+                            />
 
                         <TextView
                             android:id="@+id/email"
                             android:layout_width="match_parent"
-                            android:layout_height="81dp"
-                            android:text="patrixx@gmail.com"
-                            android:textSize="12sp" />
+                            android:layout_height="37dp"
+                            android:text="patrixx@gmail.com" />
+
+                        <TextView
+                            android:id="@+id/phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:text="234-334-3344" />
 
                         <TextView
                             android:id="@+id/address"
-                            android:layout_width="149dp"
-                            android:layout_height="92dp"
-                            android:layout_weight="1"
-                            android:text="Address: 123 Street, City, Country" />
-
-                        <View
-                            android:layout_width="149dp"
-                            android:layout_height="7dp"
-                            android:background="#3245AF" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/ll2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/objective"
                             android:layout_width="match_parent"
-                            android:layout_height="53dp"
-                            android:text="Objective: Seeking a challenging position in a dynamic company." />
+                            android:layout_height="73dp"
+                            android:text="Address: 123 Street, City, Country" />
 
                         <TextView
                             android:id="@+id/linkedIn"
                             android:layout_width="match_parent"
-                            android:layout_height="29dp"
-                            android:text=" linkedin.com/in/johndoe123" />
+                            android:layout_height="45dp"
+                            android:text="linkedin.com/in/johndoe123" />
 
                         <TextView
-                            android:id="@+id/reference"
+                            android:id="@+id/Skills"
                             android:layout_width="match_parent"
-                            android:layout_height="37dp"
+                            android:layout_height="wrap_content"
+                            android:text="Skills"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ListView
+                                android:id="@+id/list3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/Skills"
+                                tools:ignore="NotSibling" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/l2"
+                        android:layout_width="218dp"
+                        android:layout_height="993dp"
+                        android:background="#DAF5FF"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="match_parent"
+                            android:layout_height="83dp"
+                            android:text="Patricia"
+                            android:textSize="24dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/obj"
+                            android:layout_width="match_parent"
+                            android:layout_height="54dp"
+                            android:text="i want to achive something" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="41dp"
                             android:text="Reference"
-                            android:textColor="#3F51B5"
-                            android:textSize="20sp"
+                            android:textSize="18dp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/referenceName"
                             android:layout_width="match_parent"
-                            android:layout_height="31dp"
-                            android:text="Reference Name: John Doe" />
+                            android:layout_height="35dp"
+                            android:text="referenceNamee" />
 
                         <TextView
                             android:id="@+id/jobref"
                             android:layout_width="match_parent"
-                            android:layout_height="31dp"
-                            android:text="Job Title: Software Engineer" />
+                            android:layout_height="37dp"
+                            android:text="job" />
 
                         <TextView
                             android:id="@+id/companyref"
                             android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:text="Company Name: ABC Corporation" />
+                            android:layout_height="38dp"
+                            android:text="@string/CompanyName" />
 
                         <TextView
                             android:id="@+id/emailRef"
                             android:layout_width="match_parent"
-                            android:layout_height="33dp"
-                            android:text="Email: john.doe@example.com" />
+                            android:layout_height="37dp"
+                            android:text="xyz@gmail.com" />
+
+                        <TextView
+                            android:id="@+id/education"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:text="Education"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp">
+
+                            <ListView
+                                android:id="@+id/list1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_below="@id/education"
+                                tools:ignore="NotSibling" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/experienceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="46dp"
+                            android:text="Experience"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="394dp">
+
+                            <ListView
+                                android:id="@+id/list2"
+                                android:layout_width="match_parent"
+                                android:layout_height="257dp"
+                                android:layout_below="@id/experienceText"
+                                tools:ignore="NotSibling" />
+                        </RelativeLayout>
 
 
                     </LinearLayout>
+
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="       Education"
-                    android:textColor="#3F51B5"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/school"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text=" MITE" />
-
-                <TextView
-                    android:id="@+id/year"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="2023" />
-
-                <TextView
-                    android:id="@+id/grade"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="9CGPA" />
-
-                <TextView
-                    android:id="@+id/course"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text=" BE " />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="#3245AF" />
-
-
-                <TextView
-                    android:id="@+id/experienceText"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="      Experience"
-                    android:textColor="#3F51B5"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/company"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="Infosys" />
-
-                <TextView
-                    android:id="@+id/job"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="  Software Engineer" />
-
-                <TextView
-                    android:id="@+id/dur"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text=" 5years" />
-
-                <TextView
-                    android:id="@+id/detail"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text=" i am experienced in java" />
-
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:background="#3245AF" />
-
-
-                <TextView
-                    android:id="@+id/Skills"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="          Skills"
-                    android:textColor="#3F51B5"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/skill1"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text=" Python" />
-
-                <TextView
-                    android:id="@+id/skill2"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="Java" />
-
-                <TextView
-                    android:id="@+id/skill3"
-                    android:layout_width="247dp"
-                    android:layout_height="32dp"
-                    android:layout_gravity="end"
-                    android:text="competitive progarmming" />
-
-
-            </LinearLayout>
 
         </ScrollView>
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -280,7 +200,5 @@
             android:backgroundTint="@color/Green_63"
             android:text="Download" />
     </LinearLayout>
-
-
 
 </LinearLayout>

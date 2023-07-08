@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
 public class Template2 extends AppCompatActivity {
 
-    TextView name,phone,address,email,job,company,duration,detail,companyref,jobref,emailref,nameref,school,course,year,grade,linkdin,desc;
+    TextView name,phone,address,email,companyref,jobref,emailref,nameref,linkdin,desc;
    Button download;
     DatabaseReference personalDetails,objective,skills,Experience,Education,Reference;
     ListView list1,list2,list3;
