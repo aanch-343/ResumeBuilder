@@ -188,8 +188,8 @@ FirebaseDatabase firebaseDatabaseducation,firebaseDatabaseexp,firebaseDatabasesk
                     String company = ds.child("Company").getValue(String.class);
                     String job = ds.child("Job").getValue(String.class);
                     String dur = ds.child("Dur").getValue(String.class);
-                    String details = ds.child("Details").getValue(String.class);
-                    exptempArrayList.add(new Exptemp("" + company, "" + job, "" + dur, "" + details));
+                    //String details = ds.child("Details").getValue(String.class);
+                    exptempArrayList.add(new Exptemp("" + company, "" + job, "" + dur));
                     adapter2.notifyDataSetChanged();
                 }
 

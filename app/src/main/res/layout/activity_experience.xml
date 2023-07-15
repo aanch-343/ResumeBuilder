@@ -74,21 +74,21 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.379" />
 
-            <TextView
-                android:id="@+id/detail"
-                android:layout_width="335dp"
-                android:layout_height="70dp"
-                android:hint="@string/Details"
-                android:padding="15sp"
-                android:text=""
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.39"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.231"
-                tools:ignore="ExtraText" />
-        </LinearLayout>
+<!--            <TextView-->
+<!--                android:id="@+id/detail"-->
+<!--                android:layout_width="335dp"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:hint="@string/Details"-->
+<!--                android:padding="15sp"-->
+<!--                android:text=""-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.39"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.231"-->
+<!--                tools:ignore="ExtraText" />-->
+</LinearLayout>
 
     </androidx.cardview.widget.CardView>
 </LinearLayout>

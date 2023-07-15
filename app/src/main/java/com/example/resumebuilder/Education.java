@@ -24,8 +24,6 @@ public class Education extends AppCompatActivity {
     ArrayList<EducationModel> arrEducation=new ArrayList<>();
     FloatingActionButton btn;
     RecyclerAdapter1 adapter;
-    DatabaseReference databaseReference;
-    //private DatabaseReference db=FirebaseDatabase.getInstance().getReference("Education");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,12 +76,6 @@ public class Education extends AppCompatActivity {
 
             }
         });
-
-//        arrEducation.add(new EducationModel("","","",""));
-//        arrEducation.add(new EducationModel("","","",""));
-//        arrEducation.add(new EducationModel("","","",""));
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter=new RecyclerAdapter1(this,arrEducation);
         recyclerView.setAdapter(adapter);

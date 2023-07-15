@@ -17,17 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         create=(Button)findViewById(R.id.create);
-//        ActionBar actionBar;
-//        actionBar = getSupportActionBar();
 
-        // Define ColorDrawable object and parse color
-        // using parseColor method
-        // with color hash code as its parameter
-//        ColorDrawable colorDrawable
-//                = new ColorDrawable(Color.parseColor("#005691"));
-
-        // Set BackgroundDrawable
-//        actionBar.setBackgroundDrawable(colorDrawable);
         if (getSupportActionBar() != null) {
             getSupportActionBar().hide();
         }

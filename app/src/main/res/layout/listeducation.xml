@@ -25,8 +25,8 @@
 
     <TextView
         android:id="@+id/school"
-        android:layout_width="123dp"
-        android:layout_height="28dp"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
         android:layout_marginTop="24dp"
         android:text="@string/school_university"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
         android:id="@+id/year"
         android:layout_width="123dp"
         android:layout_height="24dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:text="@string/year"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/school" />

@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/mainView"
         android:layout_width="match_parent"
-        android:layout_height="714dp">
+        android:layout_height="659dp">
 
         <ScrollView
             android:id="@+id/scrollView"
@@ -39,29 +39,29 @@
                         android:id="@+id/email"
                         android:layout_width="match_parent"
                         android:layout_height="37dp"
-                        android:text="  patrixx@gmail.com"
-                        android:layout_marginStart="5sp"/>
+                        android:layout_marginStart="5sp"
+                        android:text="  patrixx@gmail.com" />
 
                     <TextView
                         android:id="@+id/phone"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:text="234-334-3344"
-                        android:layout_marginStart="5sp"/>
+                        android:layout_marginStart="5sp"
+                        android:text="234-334-3344" />
 
                     <TextView
                         android:id="@+id/address"
                         android:layout_width="match_parent"
                         android:layout_height="73dp"
-                        android:text="Address: 123 Street, City, Country"
-                        android:layout_marginStart="5sp"/>
+                        android:layout_marginStart="5sp"
+                        android:text="Address: 123 Street, City, Country" />
 
                     <TextView
                         android:id="@+id/linkedIn"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-                        android:text="linkedin.com/in/johndoe123"
-                        android:layout_marginStart="5sp"/>
+                        android:layout_marginStart="5sp"
+                        android:text="linkedin.com/in/johndoe123" />
 
                     <TextView
                         android:id="@+id/Skills"
@@ -89,7 +89,7 @@
 
                 <LinearLayout
                     android:id="@+id/l2"
-                    android:layout_width="218dp"
+                    android:layout_width="234dp"
                     android:layout_height="993dp"
                     android:background="#DAF5FF"
                     android:orientation="vertical">
@@ -98,25 +98,25 @@
                         android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="83dp"
-                        android:text="Patricia"
+                        android:text="  Patricia"
+                        android:textColor="@color/black"
                         android:textSize="25dp"
                         android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:layout_gravity="center"/>
 
                     <TextView
                         android:id="@+id/obj"
                         android:layout_width="match_parent"
-                        android:layout_height="54dp"
+                        android:layout_height="79dp"
                         android:text="i want to achive something" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="41dp"
                         android:text="Reference"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
                         android:textColor="@color/black"
-                        />
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/referenceName"
@@ -147,9 +147,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:text="Education"
+                        android:textColor="@color/black"
                         android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:textColor="@color/black"/>
+                        android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -169,12 +169,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="46dp"
                         android:text="Experience"
-                        android:textSize="18dp"
+                        android:textColor="#100101"
+                        android:textSize="22dp"
                         android:textStyle="bold" />
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="394dp">
+                        android:layout_height="267dp">
 
                         <ListView
                             android:id="@+id/list2"
@@ -196,7 +197,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
+        android:layout_height="77dp"
         android:gravity="center">
 
         <Button

@@ -38,7 +38,7 @@ public class RecyclerAdapter3 extends RecyclerView.Adapter<RecyclerAdapter3.View
         holder.txtcname.setText(experienceModelArrayList.get(position).cname);
         holder.txtjob.setText(experienceModelArrayList.get(position).job);
         holder.txtdur.setText(experienceModelArrayList.get(position).dur);
-        holder.txtdetail.setText(experienceModelArrayList.get(position).detail);
+        //holder.txtdetail.setText(experienceModelArrayList.get(position).detail);
         final int itemPosition = position;
         holder.llrow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +49,7 @@ public class RecyclerAdapter3 extends RecyclerView.Adapter<RecyclerAdapter3.View
                 EditText edtcname=dialog.findViewById(R.id.edtcname);
                 EditText edtjob=dialog.findViewById(R.id.edtJtitle);
                 EditText edtdur=dialog.findViewById(R.id.edtDur);
-                EditText edtdetail=dialog.findViewById(R.id.edtdetail);
+               // EditText edtdetail=dialog.findViewById(R.id.edtdetail);
                 Button btnaction=dialog.findViewById(R.id.btnAction);
                 btnaction.setText("Update");
                 TextView txtTitle=dialog.findViewById(R.id.textView);
@@ -57,15 +57,15 @@ public class RecyclerAdapter3 extends RecyclerView.Adapter<RecyclerAdapter3.View
                edtcname.setText((experienceModelArrayList.get(position)).cname);
                edtjob.setText((experienceModelArrayList.get(position)).job);
                 edtdur.setText((experienceModelArrayList.get(position)).dur);
-                edtdetail.setText((experienceModelArrayList.get(position)).detail);
+               // edtdetail.setText((experienceModelArrayList.get(position)).detail);
                 btnaction.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         String cname=edtcname.getText().toString();
                         String job=edtjob.getText().toString();
                         String dur=edtdur.getText().toString();
-                        String detail=edtdetail.getText().toString();
-                     experienceModelArrayList.set(position,new ExperienceModel(cname,job,dur,detail));
+                        //String detail=edtdetail.getText().toString();
+                     experienceModelArrayList.set(position,new ExperienceModel(cname,job,dur));
                         notifyItemChanged(position);
                         dialog.dismiss();
                     }
@@ -108,7 +108,7 @@ public class RecyclerAdapter3 extends RecyclerView.Adapter<RecyclerAdapter3.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView txtcname,txtjob,txtdur,txtdetail;
+        TextView txtcname,txtjob,txtdur;
         LinearLayout llrow;
 
         public ViewHolder( @NonNull View itemView) {
@@ -116,7 +116,7 @@ public class RecyclerAdapter3 extends RecyclerView.Adapter<RecyclerAdapter3.View
             txtcname=itemView.findViewById(R.id.cname);
             txtjob=itemView.findViewById(R.id.job);
             txtdur=itemView.findViewById(R.id.dur);
-            txtdetail=itemView.findViewById(R.id.detail);
+            //txtdetail=itemView.findViewById(R.id.detail);
             llrow=itemView.findViewById(R.id.llrow);
 
         }

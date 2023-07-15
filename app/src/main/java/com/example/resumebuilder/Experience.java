@@ -52,7 +52,7 @@ public class Experience extends AppCompatActivity {
                 EditText edtcname=dialog.findViewById(R.id.edtcname);
                 EditText edtjtitle=dialog.findViewById(R.id.edtJtitle);
                 EditText edtdur=dialog.findViewById(R.id.edtDur);
-                EditText edtdetails=dialog.findViewById(R.id.edtdetail);
+//                EditText edtdetails=dialog.findViewById(R.id.edtdetail);
                 Button btnaction=dialog.findViewById(R.id.btnAction);
                 btnaction.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -61,12 +61,12 @@ public class Experience extends AppCompatActivity {
                         String jtitle=edtjtitle.getText().toString();
                         String details=edtdur.getText().toString();
                         String dur=edtdur.getText().toString();
-                        arrExperience.add(new ExperienceModel(cname,jtitle,dur,details));
+                        arrExperience.add(new ExperienceModel(cname,jtitle,dur));
                         HashMap<String,Object> ref= new HashMap<String, Object>();
                         ref.put("Company",edtcname.getText().toString());
                         ref.put("Job",edtjtitle.getText().toString());
                         ref.put("Dur",edtdur.getText().toString());
-                        ref.put("Details",edtdetails.getText().toString());
+//                        ref.put("Details",edtdetails.getText().toString());
                         FirebaseDatabase.getInstance().getReference().child("Experience").push().setValue(ref);
                         Toast.makeText(Experience.this, "Data Inserted Successfully", Toast.LENGTH_SHORT).show();
                         adapter.notifyItemInserted(arrExperience.size()-1);

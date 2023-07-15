@@ -32,11 +32,11 @@ public class ExpTempAdapter extends ArrayAdapter<Exptemp> {
         TextView company=view.findViewById(R.id.company);
         TextView job=view.findViewById(R.id.job);
         TextView dur=view.findViewById(R.id.dur);
-        TextView detail=view.findViewById(R.id.details);
+       // TextView detail=view.findViewById(R.id.details);
         company.setText(getItem(position).getCompany());
         job.setText(getItem(position).getJob());
        dur.setText(getItem(position).getDur());
-        detail.setText(getItem(position).getDetails());
+        //detail.setText(getItem(position).getDetails());
         return view;
     }
 }

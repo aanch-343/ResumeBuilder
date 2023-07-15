@@ -1,14 +1,14 @@
 package com.example.resumebuilder;
 
 public class Exptemp {
-    String Company,Details,Dur,Job;
+    String Company,Dur,Job;
 
     public Exptemp() {
     }
 
-    public Exptemp(String company, String details, String dur, String job) {
+    public Exptemp(String company,  String dur, String job) {
         Company = company;
-        Details = details;
+//        Details = details;
         Dur = dur;
         Job = job;
     }
@@ -21,13 +21,13 @@ public class Exptemp {
         Company = company;
     }
 
-    public String getDetails() {
-        return Details;
-    }
-
-    public void setDetails(String details) {
-        Details = details;
-    }
+//    public String getDetails() {
+//        return Details;
+//    }
+//
+//    public void setDetails(String details) {
+//        Details = details;
+//    }
 
     public String getDur() {
         return Dur;
